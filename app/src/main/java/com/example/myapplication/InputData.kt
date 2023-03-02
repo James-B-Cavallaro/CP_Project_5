@@ -1,4 +1,7 @@
 package com.example.myapplication
 
-class InputData {
-}
+data class InputData(
+    val mood: String?,
+    val rating: String?,
+    val date: String?
+)

@@ -6,13 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/entryName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/entryName"
+        android:layout_width="110dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Mood"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/entryRating"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:hint="Rating"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@id/submit"
+        app:layout_constraintStart_toEndOf="@+id/entryDate"
+        app:layout_constraintTop_toBottomOf="@id/list"
+        app:layout_constraintVertical_bias="0.8"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/entryDate"
+        android:layout_width="121dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Date"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/entryName"
+        app:layout_constraintTop_toBottomOf="@+id/list"
+        tools:ignore="HardcodedText,TextFields,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="160dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entryDate"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
